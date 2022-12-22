@@ -1,6 +1,6 @@
 [![npm](https://img.shields.io/npm/v/tlm-react?color=blue)](https://www.npmjs.com/package/tlm-react)
 
-# The Liberation Machine - React
+# MWUI - React
 
 ## Publish package
 
@@ -11,5 +11,5 @@
 ## Use in React
 
 ```JavaScript
-import { TlmButton } from 'tlm-react';
+import { MwButton } from 'mw-react';
 ```

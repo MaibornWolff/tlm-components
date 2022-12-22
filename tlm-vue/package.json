@@ -1,7 +1,7 @@
 {
   "name": "tlm-vue",
   "version": "0.0.17",
-  "description": "Vue specific wrapper for tlm-components",
+  "description": "Vue specific wrapper for MWUI",
   "repository": {
     "type": "git",
     "url": "https://github.com/MaibornWolff/tlm-components.git"

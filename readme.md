@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/tlm-stencil?color=blue)](https://www.npmjs.com/package/tlm-stencil)
 [![Storybook](https://raw.githubusercontent.com/storybookjs/brand/master/badge/badge-storybook.svg?sanitize=true)](https://maibornwolff.github.io/tlm-components)
 
-# The Liberation Machine - Component Library
+# MWUI - Component Library
 
 A web component library which uses Figma's token plugin to create easily modifiable design systems.
 
@@ -20,7 +20,7 @@ A web component library which uses Figma's token plugin to create easily modifia
 
 ## The Design System Pipeline
 
-All the Components are developed based on the TLM Design System in Figma. We use `Design Tokens` to version and synchronize design decisions between the Design and the WebComponents.
+All the Components are developed based on the MWUI Design System in Figma. We use `Design Tokens` to version and synchronize design decisions between the Design and the WebComponents.
 
 The [Token-Farm](tlm-token-farm/README.md) module transforms any changes in the Design Tokens into Style Dictionary outputs which are linked to the respective WebComponent.
 
@@ -64,7 +64,7 @@ Prior to publishing every update needs to be versioned based on these guidelines
 </tbody>
 </table>
 
-All tlm packages need to be on the same version, meaning if `tlm-stencil`'s version increases the versions of `tlm-react`, `tlm-vue` and `tlm-angular` need to be updated as well.
+All MWUI packages need to be on the same version, meaning if `mw-stencil`'s version increases the versions of `mw-react`, `mw-vue` and `mw-angular` need to be updated as well.
 
 ### 1. Publish WebComponent Library
 
@@ -83,19 +83,19 @@ npm publish
 
 ### 2. Publish framework-specific WebComponent Libraries
 
-Perform step 1) and update version of `tlm-components` in `tlm-react`.
+Perform step 1) and update version of `mw-stencil` in `mw-react`/`mw-vue`/`mw-angular`.
 
-Update `tlm-stencil` dependency to latest published version.
+Update `mw-stencil` dependency to the latest published version.
 
 ```bash
-# in framework-specific directory, e.g. tlm-react
+# in framework-specific directory, e.g. mw-react
 npm run build
 ```
 
 Then, publish to NPM by running:
 
 ```bash
-# in framework-specific directory, e.g. tlm-react
+# in framework-specific directory, e.g. mw-react
 npm publish
 ```
 
@@ -104,11 +104,11 @@ npm publish
 To leverage the usage of our WebComponents we provide framework-specific wrappers for React, Vue and Angular. You can install and use the TLM Components accordingly:
 
 ```bash
-npm i tlm-react     # in React
+npm i mw-react     # in React
 
-npm i tlm-vue       # in Vue
+npm i mw-vue       # in Vue
 
-npm i tlm-angular   # in Angular
+npm i mw-angular   # in Angular
 ```
 
 For more info on the individual wrappers, check out the [React](tlm-react/README.md), [Vue](tlm-vue/README.md) or [Angular](tlm-angular/README.md) documentation.
@@ -118,13 +118,13 @@ For more info on the individual wrappers, check out the [React](tlm-react/README
 To install the library within the chosen framework, run:
 
 ```bash
-npm i tlm-stencil
+npm i mw-stencil
 ```
 
 Include the following in the `main.js` (e.g. Angular, Vue) or `index.js` (e.g. React):
 
 ```JavaScript
-import { defineCustomElements } from "tlm-stencil/loader";
+import { defineCustomElements } from "mw-stencil/loader";
 defineCustomElements(window);
 ```
 

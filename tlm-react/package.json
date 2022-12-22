@@ -2,7 +2,7 @@
   "name": "tlm-react",
   "sideEffects": false,
   "version": "0.0.17",
-  "description": "React specific wrapper for tlm-components",
+  "description": "React specific wrapper for MWUI",
   "repository": {
     "type": "git",
     "url": "https://github.com/MaibornWolff/tlm-components.git"

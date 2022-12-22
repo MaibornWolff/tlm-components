@@ -1,8 +1,8 @@
 [![npm](https://img.shields.io/npm/v/tlm-stencil?color=blue)](https://www.npmjs.com/package/tlm-stencil)
 
-# The Liberation Machine - Stencil
+# MWUI - Stencil
 
-`tlm-stencil` houses the component library of the Liberation Machine and is built using [StencilJs](https://stenciljs.com/).
+`mw-stencil` houses the component library of the Liberation Machine and is built using [StencilJs](https://stenciljs.com/).
 Stencil provides WebComponents as well as framework-specific integrations to leverage usage of WebComponents in React, Vue and Angular.
 
 ### Creation

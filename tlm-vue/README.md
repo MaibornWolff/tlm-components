@@ -1,6 +1,6 @@
 [![npm](https://img.shields.io/npm/v/tlm-vue?color=blue)](https://www.npmjs.com/package/tlm-vue)
 
-# The Liberation Machine - Vue
+# MWUI - Vue
 
 ## Publish package
 
@@ -13,9 +13,9 @@
 Import the library plugin in the `main.js` file:
 
 ```JavaScript
-import { TlmComponents } from 'tlm-vue';
+import { MwComponents } from 'mw-vue';
 
-createApp(App).use(TlmComponents).mount('#app');
+createApp(App).use(MwComponents).mount('#app');
 ```
 You can then use your components within vue:
 
@@ -25,12 +25,12 @@ You can then use your components within vue:
 </template>
 
 <script>
-import { TlmButton } from 'tlm-vue';
+import { MwButton } from 'mw-vue';
 
 export default {
   name: 'HelloWorld',
   components: {
-    TlmButton
+    MwButton
   }
 }
 ```

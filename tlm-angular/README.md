@@ -1,4 +1,4 @@
-# The Liberation Machine - Angular
+# MWUI - Angular
 
 WIP
 

@@ -14,11 +14,11 @@ Download the plugin from [here](https://www.figma.com/community/plugin/843461159
 
 Generate the access token and paste it into the plugin settings. _Do not share this token with anybody!_
 
-**Repository:** MaibornWolff/tlm-components
+**Repository:** MaibornWolff/mwui
 
 **Default Branch:** develop
 
-**File Path:** tlm-token-farm/input/tokens.json
+**File Path:** mw-token-farm/input/tokens.json
 
 After saving the settings you can pull the tokens from GitHub using the button in the bottom left corner.
 
@@ -29,7 +29,7 @@ After making changes to the Figma file (while using design tokens) you can push 
 Click on the 'Push to GitHub' button in the bottom left corner. Make the sure that 'develop' is the selected branch. You have to enter a short message for every commit you push to GitHub. These messages should look like this:
 
 ```
-figma-plugin: change border-radius of buttons to none
+change border-radius of buttons to none
 ```
 
-The message should be in English and serve as a quick description of what changes were made to the tokens. The 'figma-plugin: ' prefix makes it easier to understand which commits were made using the plugin.
+The message should be in English and serve as a quick description of what changes were made to the tokens.
