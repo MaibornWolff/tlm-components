@@ -15,7 +15,7 @@ export class MwRadioButton {
 
   render() {
     return (
-      <label class="container">
+      <label class="mw-radio-button-container">
         <input id="radio-input" type="radio" value={this.value} name={this.name} checked={this.checked} disabled={this.disabled} />
         <span class="mw-radio-button"></span>
         <slot></slot>
