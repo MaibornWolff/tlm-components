@@ -12,7 +12,7 @@
 }
 
 /* Create a custom radio button */
-.checkmark {
+.mw-radio-button {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -26,19 +26,49 @@
   margin: 14px;
 }
 
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+/* Unchecked & Hover */
+.container:hover input~.mw-radio-button {
   background: #ff4c4c;
 }
-.container:hover input:disabled ~ .checkmark {
-  background: none;
-}
-/* When the radio button is checked, add a blue background */
-.container input:checked ~ .checkmark {
+
+/* Checked */
+.container input:checked~.mw-radio-button {
   border: 6px solid red;
 }
 
-.container.hover input:checked ~ .checkmark {
-  border: 6px solid #ff4c4c;
+/* Checked & Hover */
+.container:hover input:checked~.mw-radio-button {
+  border: 6px solid #F86F96;
   background: none;
+}
+
+/* Disabled */
+.container input:disabled~.mw-radio-button {
+  border: 2px solid grey;
+  cursor: default;
+}
+
+/* Disabled & Hover */
+.container:hover input:disabled~.mw-radio-button {
+  background: none;
+}
+
+/* Disabled & Checked */
+.container input:disabled:checked~.mw-radio-button {
+  border: 6px solid grey;
+}
+
+/* Disabled & Checked & Hover */
+.container input:disabled:checked~.mw-radio-button {
+  border: 6px solid grey;
+}
+
+/* Disabled & Checked & Hover */
+input:focus:checked~.mw-radio-button {
+  border: 2px solid black;
+}
+
+/* Disabled & Checked & Hover */
+input:focus~.mw-radio-button {
+  border: 2px solid black;
 }
