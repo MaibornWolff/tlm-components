@@ -1,5 +1,12 @@
 import { create } from '@storybook/theming';
 import logo from './public/mwui_logo.svg';
+import {
+  mwCoreColorPurple900,
+  mwCoreColorPink500,
+  mwCoreFontFontFamiliesBody,
+  borderRadiusMedium,
+  mwCoreColorNeutral100,
+} from '../../tlm-token-farm/dist/js/MW_core';
 
 export default create({
   base: 'light',
@@ -8,25 +15,25 @@ export default create({
   brandImage: logo,
   brandTarget: '_self',
 
-  // colorPrimary: 'hotpink',
-  // colorSecondary: 'deepskyblue',
+  colorPink: mwCoreColorPink500,
+  colorPurple: mwCoreColorPurple900,
 
   // UI
-  // appBg: 'white',
+  appBg: mwCoreColorNeutral100,
   // appContentBg: 'white',
   // appBorderColor: 'grey',
-  // appBorderRadius: 4,
+  appBorderRadius: borderRadiusMedium,
 
   // Typography
-  // fontBase: '"Roboto", sans-serif',
+  fontBase: mwCoreFontFontFamiliesBody,
   // fontCode: 'monospace',
 
   // Text colors
-  // textColor: 'black',
-  // textInverseColor: 'rgba(255,255,255,0.9)',
+  // textColor: mwCoreColorNeutralWhite,
+  // textInverseColor: 'black',
 
   // Toolbar default and active colors
-  // barTextColor: 'white',
-  barSelectedColor: '#1c174a',
-  // barBg: 'lightgrey',
+  barTextColor: 'white',
+  //barSelectedColor: mwCoreColorPink500,
+  barBg: mwCoreColorPurple900,
 });

@@ -6,77 +6,43 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MwRadioButton {
-        "checked"?: boolean;
+    interface MwButton {
         "disabled"?: boolean;
-        "name": string;
-        "value": string;
-    }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+        "secondary"?: boolean;
+        "testId": string;
     }
 }
+export interface MwButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMwButtonElement;
+}
 declare global {
-    interface HTMLMwRadioButtonElement extends Components.MwRadioButton, HTMLStencilElement {
+    interface HTMLMwButtonElement extends Components.MwButton, HTMLStencilElement {
     }
-    var HTMLMwRadioButtonElement: {
-        prototype: HTMLMwRadioButtonElement;
-        new (): HTMLMwRadioButtonElement;
-    };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLMwButtonElement: {
+        prototype: HTMLMwButtonElement;
+        new (): HTMLMwButtonElement;
     };
     interface HTMLElementTagNameMap {
-        "mw-radio-button": HTMLMwRadioButtonElement;
-        "my-component": HTMLMyComponentElement;
+        "mw-button": HTMLMwButtonElement;
     }
 }
 declare namespace LocalJSX {
-    interface MwRadioButton {
-        "checked"?: boolean;
+    interface MwButton {
         "disabled"?: boolean;
-        "name"?: string;
-        "value"?: string;
-    }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+        "onClickEmitter"?: (event: MwButtonCustomEvent<string>) => void;
+        "secondary"?: boolean;
+        "testId": string;
     }
     interface IntrinsicElements {
-        "mw-radio-button": MwRadioButton;
-        "my-component": MyComponent;
+        "mw-button": MwButton;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "mw-radio-button": LocalJSX.MwRadioButton & JSXBase.HTMLAttributes<HTMLMwRadioButtonElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "mw-button": LocalJSX.MwButton & JSXBase.HTMLAttributes<HTMLMwButtonElement>;
         }
     }
 }
