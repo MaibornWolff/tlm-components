@@ -74,7 +74,7 @@
 }
 
 /* Disabled States */
-/* Disabled */
+/* Disabled, Unchecked */
 .mw-radio-button-container input:disabled~.mw-radio-button {
   border: var(--mw-component-checkbox-selected-border-width-unselected) solid var(--mw-component-controls-color-outline-disabled);
   background-color: var(--mw-component-controls-color-bg-unselected);
@@ -95,7 +95,7 @@
   background-color: var(--mw-component-controls-color-fg-disabled);
 }
 
-/* Focus States */
+/* Focus State */
 .mw-radio-button-container input:focus~.mw-radio-button {
   border: var(--mw-component-checkbox-selected-border-width-unselected) solid var(--mw-component-controls-color-outline-default);
 }
