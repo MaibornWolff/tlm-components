@@ -6,7 +6,7 @@
   padding-top: var(--mw-component-controls-with-label-padding-tb);
   padding-bottom: var(--mw-component-controls-with-label-padding-tb);
   padding-right: var(--mw-component-controls-with-label-padding-r);
-  padding-right: var(--mw-component-controls-with-label-padding-l);
+  padding-left: var(--mw-component-controls-with-label-padding-l);
   gap: var(--mw-component-controls-with-label-gap);
   color: var(--mw-component-controls-color-label-default)
     /* TODO label font styling  */
