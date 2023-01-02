@@ -1,4 +1,3 @@
-/* The mw-radio-button-container */
 .mw-radio-button-container {
   display: flex;
   position: relative;
@@ -10,7 +9,7 @@
   padding-right: var(--mw-component-controls-with-label-padding-l);
   gap: var(--mw-component-controls-with-label-gap);
   color: var(--mw-component-controls-color-label-default)
-  /* TODO label font styling  */
+    /* TODO label font styling  */
 }
 
 
@@ -81,10 +80,9 @@
   background-color: var(--mw-component-controls-color-bg-unselected);
 }
 
-.mw-radio-button-container:has(input:disabled){
+.mw-radio-button-container:has(input:disabled) {
   cursor: default;
   color: var(--mw-component-controls-color-label-disabled)
-
 }
 
 /* Disabled, Checked */
@@ -101,5 +99,3 @@
 .mw-radio-button-container input:focus~.mw-radio-button {
   border: var(--mw-component-checkbox-selected-border-width-unselected) solid var(--mw-component-controls-color-outline-default);
 }
-
-
