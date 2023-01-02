@@ -5,12 +5,39 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Target } from "./components/mw-button/mw-button";
 export namespace Components {
     interface MwRadioButton {
         "checked"?: boolean;
         "disabled"?: boolean;
         "name": string;
         "value": string;
+    }
+    interface MwButton {
+        /**
+          * Visually and functionally disable button
+         */
+        "disabled"?: boolean;
+        /**
+          * If provided the button will act as a link
+         */
+        "href"?: string;
+        /**
+          * Label to be displayed
+         */
+        "label"?: string;
+        /**
+          * Use secondary button style
+         */
+        "secondary"?: boolean;
+        /**
+          * If using href the target prop can be provided
+         */
+        "target"?: Target;
+        /**
+          * Must be provided for automated testing
+         */
+        "testId": string;
     }
 }
 declare global {
@@ -30,6 +57,33 @@ declare namespace LocalJSX {
         "disabled"?: boolean;
         "name"?: string;
         "value"?: string;
+    }
+    interface MwButton {
+        /**
+          * Visually and functionally disable button
+         */
+        "disabled"?: boolean;
+        /**
+          * If provided the button will act as a link
+         */
+        "href"?: string;
+        /**
+          * Label to be displayed
+         */
+        "label"?: string;
+        "onClickEmitter"?: (event: MwButtonCustomEvent<string>) => void;
+        /**
+          * Use secondary button style
+         */
+        "secondary"?: boolean;
+        /**
+          * If using href the target prop can be provided
+         */
+        "target"?: Target;
+        /**
+          * Must be provided for automated testing
+         */
+        "testId": string;
     }
     interface IntrinsicElements {
         "mw-radio-button": MwRadioButton;

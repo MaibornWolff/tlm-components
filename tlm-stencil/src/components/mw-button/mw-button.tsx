@@ -1,56 +1,58 @@
-// import { Component, Element, Event, EventEmitter, h, Prop } from '@stencil/core';
-// import { css } from '@emotion/css';
-// import { getFontWeightValue } from '../../utils/utils';
-// import { HTMLStencilElement } from '@stencil/core/internal';
-// import {
-//   mwComponentButtonPrimaryColorBgDefault,
-//   mwComponentButtonBorderWidthPrimaryTextDefault,
-//   mwComponentButtonPrimaryColorFgDefault,
-//   mwComponentButtonPrimaryColorBgHover,
-//   mwComponentButtonPrimaryColorFgHover,
-//   mwComponentButtonPrimaryColorBgPressed,
-//   mwComponentButtonPrimaryColorFgFocused,
-//   mwComponentButtonPrimaryColorBgDisabled,
-//   mwComponentButtonPrimaryColorFgDisabled,
-//   mwComponentButtonSecondaryTextColorFgDisabled,
-//   mwComponentButtonSecondaryTextColorFgFocused,
-//   mwComponentButtonSecondaryTextColorFgHover,
-//   mwComponentButtonSecondaryTextColorBgDefault,
-//   mwComponentButtonSecondaryTextColorFgDefault,
-//   mwComponentButtonBorderWidthSecondaryDefault,
-//   mwComponentButtonSecondaryTextColorBorderHover,
-//   mwComponentButtonSecondaryTextColorBorderDisabled,
-//   mwComponentButtonSecondaryTextColorBorderDefault,
-//   mwComponentButtonTypo,
-//   mwComponentButtonSecondaryTextColorFgPressed,
-//   mwComponentButtonSecondaryTextColorBorderPressed,
-//   mwComponentButtonPrimaryColorFgPressed,
-//   mwComponentButtonPrimaryColorBgFocused,
-//   mwComponentButtonSecondaryTextColorBorderFocused,
-//   mwComponentButtonPrimarySecondaryTextPaddingLr,
-//   mwComponentButtonPrimarySecondaryTextPaddingTb,
-//   mwComponentButtonPrimarySecondaryTextGap,
-//   mwComponentButtonBorderRadiusDefault,
-//   mwComponentSizeButtonPrimarySecondaryMinWidth,
-//   mwComponentButtonBorderWidthSecondaryFocused,
-//   letterSpacingButtons,
-// } from '../../../../tlm-token-farm/dist/js/MW_component.js';
+import { Component, Element, Event, EventEmitter, h, Prop } from '@stencil/core';
+import { css } from '@emotion/css';
+import { getFontWeightValue } from '../../utils/utils';
+import { HTMLStencilElement } from '@stencil/core/internal';
+import {
+  mwComponentButtonPrimaryColorBgDefault,
+  mwComponentButtonBorderWidthPrimaryTextDefault,
+  mwComponentButtonPrimaryColorFgDefault,
+  mwComponentButtonPrimaryColorBgHover,
+  mwComponentButtonPrimaryColorFgHover,
+  mwComponentButtonPrimaryColorBgPressed,
+  mwComponentButtonPrimaryColorFgFocused,
+  mwComponentButtonPrimaryColorBgDisabled,
+  mwComponentButtonPrimaryColorFgDisabled,
+  mwComponentButtonSecondaryTextColorFgDisabled,
+  mwComponentButtonSecondaryTextColorFgFocused,
+  mwComponentButtonSecondaryTextColorFgHover,
+  mwComponentButtonSecondaryTextColorBgDefault,
+  mwComponentButtonSecondaryTextColorFgDefault,
+  mwComponentButtonBorderWidthSecondaryDefault,
+  mwComponentButtonSecondaryTextColorBorderHover,
+  mwComponentButtonSecondaryTextColorBorderDisabled,
+  mwComponentButtonSecondaryTextColorBorderDefault,
+  mwComponentButtonTypo,
+  mwComponentButtonSecondaryTextColorFgPressed,
+  mwComponentButtonSecondaryTextColorBorderPressed,
+  mwComponentButtonPrimaryColorFgPressed,
+  mwComponentButtonPrimaryColorBgFocused,
+  mwComponentButtonSecondaryTextColorBorderFocused,
+  mwComponentButtonPaddingLr,
+  mwComponentButtonPaddingTb,
+  mwComponentButtonGapBetween,
+  mwComponentButtonBorderRadiusDefault,
+  mwComponentSizeButtonPrimarySecondaryMinWidth,
+  mwComponentButtonBorderWidthSecondaryFocused,
+  mwComponentButtonPaddingIconAll,
+  letterSpacingButtons,
+} from '../../../../tlm-token-farm/dist/js/MW_component.js';
 
 // // figma exports percentage value instead of em
 // // workaround to convert it to float
 // const letterSpacing = Number(letterSpacingButtons.replace('%', '').trim()) / 100;
 
-// const base = css`
-//   appearance: none;
-//   padding: ${mwComponentButtonPrimarySecondaryTextPaddingTb} ${mwComponentButtonPrimarySecondaryTextPaddingLr};
-//   font-family: '${mwComponentButtonTypo.fontFamily}';
-//   letter-spacing: ${letterSpacing}em;
-//   line-height: ${mwComponentButtonTypo.lineHeight}px;
-//   font-weight: ${getFontWeightValue(mwComponentButtonTypo.fontWeight)};
-//   font-size: ${mwComponentButtonTypo.fontSize}px;
-//   border-radius: ${mwComponentButtonBorderRadiusDefault}px;
-//   min-width: ${mwComponentSizeButtonPrimarySecondaryMinWidth}px;
-// `;
+const base = css`
+  appearance: none;
+  text-decoration: none;
+  padding: ${mwComponentButtonPaddingTb} ${mwComponentButtonPaddingLr};
+  font-family: '${mwComponentButtonTypo.fontFamily}';
+  letter-spacing: ${letterSpacing}em;
+  line-height: ${mwComponentButtonTypo.lineHeight}px;
+  font-weight: ${getFontWeightValue(mwComponentButtonTypo.fontWeight)};
+  font-size: ${mwComponentButtonTypo.fontSize}px;
+  border-radius: ${mwComponentButtonBorderRadiusDefault}px;
+  min-width: ${mwComponentSizeButtonPrimarySecondaryMinWidth};
+`;
 
 // const primaryButtonStyles = css`
 //   ${base};
@@ -103,57 +105,142 @@
 //   }
 // `;
 
-// const iconStartStyles = css`
-//   margin-right: ${mwComponentButtonPrimarySecondaryTextGap};
-// `;
+const iconButtonStyles = css`
+  padding: ${mwComponentButtonPaddingIconAll};
+  min-width: 0px;
+`;
 
-// const iconEndStyles = css`
-//   margin-left: ${mwComponentButtonPrimarySecondaryTextGap};
-// `;
+const flexStyles = css`
+  display: flex;
+  align-items: center;
+`;
 
-// @Component({
-//   tag: 'mw-button',
-//   shadow: false,
-// })
-// export class TlmButton {
-//   @Element() hostElement: HTMLStencilElement;
-//   @Prop() testId!: string;
-//   @Prop() disabled?: boolean;
-//   @Prop() secondary?: boolean;
-//   @Event({
-//     bubbles: true,
-//     cancelable: false,
-//     composed: false,
-//   })
-//   clickEmitter: EventEmitter<string>;
+const iconStyles = css`
+  display: inline-block;
+  height: 18px;
+  > span {
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+  }
+`;
 
-//   hasIconStartSlot: boolean;
-//   hasIconEndSlot: boolean;
+const iconStartStyles = css`
+  margin-right: ${mwComponentButtonGapBetween};
+  display: inline-block;
+  height: 18px;
+  > span {
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+  }
+`;
 
-//   componentWillLoad() {
-//     this.hasIconStartSlot = !!this.hostElement.querySelector('[slot="icon-start"]');
-//     this.hasIconEndSlot = !!this.hostElement.querySelector('[slot="icon-end"]');
-//   }
+const iconEndStyles = css`
+  margin-left: ${mwComponentButtonGapBetween};
+  display: inline-block;
+  height: 18px;
+  > span {
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+  }
+`;
+
+export type Target = '_blank' | '_self' | '_parent' | '_top';
+
+@Component({
+  tag: 'mw-button',
+  shadow: false,
+  assetsDirs: ['../assets'],
+})
+export class MWButton {
+  @Element() hostElement: HTMLStencilElement;
+  /**
+   * Must be provided for automated testing
+   */
+  @Prop() testId!: string;
+  /**
+   * Visually and functionally disable button
+   */
+  @Prop() disabled?: boolean;
+  /**
+   * Label to be displayed
+   */
+  @Prop() label?: string;
+  /**
+   * Use secondary button style
+   */
+  @Prop() secondary?: boolean = false;
+  /**
+   * If provided the button will act as a link
+   */
+  @Prop() href?: string;
+  /**
+   * If using href the target prop can be provided
+   */
+  @Prop() target?: Target = '_self';
+  @Event({
+    bubbles: true,
+    cancelable: false,
+    composed: false,
+  })
+  clickEmitter: EventEmitter<string>;
+
+  hasIconStartSlot: boolean;
+  hasIconEndSlot: boolean;
+  hasIcon: boolean;
+  hasLabel: boolean;
+
+  componentWillLoad() {
+    this.hasIconStartSlot = !!this.hostElement.querySelector('[slot="icon-start"]');
+    this.hasIconEndSlot = !!this.hostElement.querySelector('[slot="icon-end"]');
+    this.hasIcon = this.hasIconStartSlot || this.hasIconEndSlot;
+    this.hasLabel = !!this.label;
+  }
 
 //   handleClick = () => {
 //     this.clickEmitter.emit('onClick');
 //   };
 
-//   render() {
-//     return (
-//       <button disabled={this.disabled} onClick={this.handleClick} class={this.secondary ? secondaryButtonStyles : primaryButtonStyles} test-id={this.testId} type="button">
-//         {this.hasIconStartSlot && (
-//           <span class={iconStartStyles}>
-//             <slot name="icon-start"></slot>
-//           </span>
-//         )}
-//         <slot></slot>
-//         {this.hasIconEndSlot && (
-//           <span class={iconEndStyles}>
-//             <slot name="icon-end"></slot>
-//           </span>
-//         )}
-//       </button>
-//     );
-//   }
-// }
+  render() {
+    if (this.href) {
+      return (
+        <a href={this.href} target={this.target} class={this.secondary ? secondaryButtonStyles : primaryButtonStyles} test-id={this.testId}>
+          {this.hasIconStartSlot && (
+            <span class={this.hasLabel ? iconStartStyles : iconStyles}>
+              <slot name="icon-start"></slot>
+            </span>
+          )}
+          <span>{this.label}</span>
+          {this.hasIconEndSlot && (
+            <span class={this.hasLabel ? iconEndStyles : iconStyles}>
+              <slot name="icon-end"></slot>
+            </span>
+          )}
+        </a>
+      );
+    }
+    return (
+      <button
+        disabled={this.disabled}
+        onClick={this.handleClick}
+        class={`${this.secondary ? secondaryButtonStyles : primaryButtonStyles} ${this.hasIcon && flexStyles} ${!this.hasLabel && iconButtonStyles}`}
+        test-id={this.testId}
+        type="button"
+      >
+        {this.hasIconStartSlot && (
+          <span class={this.hasLabel ? iconStartStyles : iconStyles}>
+            <slot name="icon-start"></slot>
+          </span>
+        )}
+        <span>{this.label}</span>
+        {this.hasIconEndSlot && (
+          <span class={this.hasLabel ? iconEndStyles : iconStyles}>
+            <slot name="icon-end"></slot>
+          </span>
+        )}
+      </button>
+    );
+  }
+}
